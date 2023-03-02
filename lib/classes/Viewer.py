@@ -12,8 +12,8 @@ class Viewer:
     def set_username(self, username):
         if isinstance(username, str) and 6 <= len(username) <= 16:
             self._username = username
-        # else:
-        #     raise Exception("Username must be a string between 6-16 charachters")
+        else:
+            raise Exception("Username must be a string between 6-16 charachters")
 
     username = property(get_username, set_username)
 

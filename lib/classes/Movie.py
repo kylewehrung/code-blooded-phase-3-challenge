@@ -11,8 +11,8 @@ class Movie:
     def set_title(self, title):
         if isinstance(title, str) and len(title) > 0:
             self._title = title
-        # else:
-        #     raise Exception("Title must be a string greater than 0 charachters")
+        else:
+            raise Exception("Title must be a string greater than 0 charachters")
 
     title = property(get_title, set_title)
 
@@ -28,6 +28,7 @@ class Movie:
 
 
     def average_rating(self):
+        #something to do with: sum(variable_representing_rating) / total ratings?
         pass
 
     @classmethod

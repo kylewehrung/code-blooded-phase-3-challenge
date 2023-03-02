@@ -22,8 +22,8 @@ class Review:
     def set_rating(self, rating):
         if isinstance(rating, int) and 1 <= rating <= 5:
             self._rating = rating
-        # else:
-        #     raise Exception("Rating must be a number between 1-5 charachters")
+        else:
+            raise Exception("Rating must be a number between 1-5 charachters")
     
     rating = property(get_rating, set_rating)
 
