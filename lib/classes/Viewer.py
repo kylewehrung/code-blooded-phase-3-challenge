@@ -4,9 +4,21 @@ from classes.Review import Review
 class Viewer:
 
     def __init__(self, username):
-        pass
+        self.username = username
 
-    # username property goes here!
+    def get_username(self):
+        return self._username
+
+    def set_username(self, username):
+        if isinstance(username, str) and 6 <= len(username) <= 16:
+            self._username = username
+        else:
+            raise Exception("Username must be a string between 6-16 charachters")
+
+    username = property(get_username, set_username)
+
+
+    
 
     def reviews(self):
         pass
