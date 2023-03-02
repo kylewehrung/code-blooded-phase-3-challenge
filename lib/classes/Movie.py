@@ -11,18 +11,21 @@ class Movie:
     def set_title(self, title):
         if isinstance(title, str) and len(title) > 0:
             self._title = title
-        else:
-            raise Exception("Title must be a string greater than 0 charachters")
+        # else:
+        #     raise Exception("Title must be a string greater than 0 charachters")
 
     title = property(get_title, set_title)
 
 
 
     def reviews(self):
-        pass
+        from classes.Review import Review
+        return [review for review in Review.all if review.movie == self]
+
 
     def reviewers(self):
-        pass
+        return [review.viewer for review in self.reviews()]
+
 
     def average_rating(self):
         pass
